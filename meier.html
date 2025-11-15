@@ -1,152 +1,660 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Praxisbedarf Meier GmbH – Praxismöbel aus der Region</title>
-<style>
-*{box-sizing:border-box}
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;line-height:1.5;color:#0f172a;background:#f8fafc}
-a{color:#2563eb;text-decoration:none}
-.header{display:flex;align-items:center;gap:12px;padding:16px 20px;background:#ffffff;position:sticky;top:0;border-bottom:1px solid #e5e7eb;z-index:10}
-.header img{height:40px}
-.brand{font-weight:700;font-size:1.25rem}
-.container{max-width:1000px;margin:0 auto;padding:20px}
-.hero{background:#ffffff;border:1px solid #e5e7eb;border-radius:14px;padding:20px;display:flex;gap:20px;align-items:center}
-.hero .title{font-size:1.5rem;font-weight:700;margin:0}
-.badge{display:inline-block;padding:4px 10px;border-radius:999px;background:#e2e8f0;font-size:.85rem;margin-right:8px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{background:#ffffff;border:1px solid #e5e7eb;border-radius:14px;padding:16px}
-.card h3{margin:0 0 8px 0;font-size:1.1rem}
-.icon{font-size:26px;display:inline-block;margin-right:6px}
-.section{margin-top:22px}
-.section h2{margin:0 0 10px 0;font-size:1.25rem}
-.product{display:flex;gap:12px;align-items:flex-start}
-.product .thumb{width:72px;height:72px;border-radius:10px;border:1px solid #e5e7eb;background:linear-gradient(135deg,#f1f5f9,#e2e8f0);display:flex;align-items:center;justify-content:center;font-size:30px}
-.kv{display:flex;flex-wrap:wrap;gap:8px}
-.kv span{background:#eef2ff;border:1px solid #c7d2fe;color:#3730a3;padding:4px 8px;border-radius:999px;font-size:.85rem}
-.notice{font-size:.9rem;color:#475569}
-.reviews .review{background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:12px;display:grid;grid-template-columns:auto 1fr;gap:12px}
-.reviews .avatar{width:44px;height:44px;border-radius:999px;background:#e2e8f0;display:flex;align-items:center;justify-content:center;font-weight:700;color:#334155}
-.stars{color:#f59e0b}
-.meta{font-size:.8rem;color:#64748b}
-.footer{margin-top:24px;padding:16px;color:#64748b;font-size:.85rem;text-align:center}
-@media (max-width:800px){.grid{grid-template-columns:1fr}.hero{flex-direction:column;align-items:flex-start}}
-</style>
+    <meta charset="UTF-8">
+    <title>Meier Praxisausstattung GmbH – Wartezimmerstühle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        :root {
+            --primary: #1b4f72;
+            --primary-light: #eaf3fb;
+            --accent: #f1c40f;
+            --bg: #f5f7fb;
+            --text: #2c3e50;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        /* HEADER / HERO */
+
+        .hero {
+            background: radial-gradient(circle at top left, #4a90e2, #1b4f72);
+            color: #fff;
+            padding: 20px 20px 40px;
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .hero-logo {
+            flex: 0 0 auto;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+            padding: 12px;
+        }
+
+        .hero-logo img {
+            display: block;
+            height: 80px;
+            width: auto;
+        }
+
+        .hero-text {
+            flex: 1 1 260px;
+        }
+
+        .hero-text h1 {
+            margin: 0 0 8px;
+            font-size: 1.9rem;
+            letter-spacing: 0.03em;
+        }
+
+        .hero-text p {
+            margin: 0 0 12px;
+            max-width: 520px;
+            opacity: 0.95;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.15);
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 0.82rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+
+        .badge span.icon {
+            font-size: 1rem;
+        }
+
+        .hero-cta {
+            margin-top: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            color: var(--primary);
+            font-weight: 600;
+            padding: 10px 18px;
+            border-radius: 999px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+            text-decoration: none;
+        }
+
+        .hero-cta span.icon {
+            font-size: 1.1rem;
+        }
+
+        /* NAVIGATION */
+
+        .section-nav {
+            background: #fff;
+            border-bottom: 1px solid #dde3f0;
+            position: sticky;
+            top: 0;
+            z-index: 20;
+        }
+
+        .section-nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            overflow-x: auto;
+            gap: 12px;
+            padding: 8px 12px;
+            scrollbar-width: none;
+        }
+
+        .section-nav-inner::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-pill {
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            border: 1px solid #dde3f0;
+            background: #fff;
+            white-space: nowrap;
+            text-decoration: none;
+            color: var(--text);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-pill span.icon {
+            font-size: 1rem;
+        }
+
+        /* MAIN CONTENT */
+
+        main {
+            max-width: 1100px;
+            margin: 18px auto 40px;
+            padding: 0 12px;
+        }
+
+        .section-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+            gap: 18px;
+        }
+
+        @media (max-width: 920px) {
+            .section-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+            .hero-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .hero-logo img {
+                height: 70px;
+            }
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 18px 18px 16px;
+            box-shadow: 0 8px 20px rgba(15,23,42,0.06);
+            margin-bottom: 16px;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .icon-circle {
+            flex: 0 0 auto;
+            height: 32px;
+            width: 32px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .card-title {
+            margin: 0;
+            font-size: 1.05rem;
+        }
+
+        .product-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin-top: 6px;
+        }
+
+        .product-table th,
+        .product-table td {
+            padding: 8px 6px;
+            border-bottom: 1px solid #edf1f9;
+            text-align: left;
+        }
+
+        .product-table th {
+            font-weight: 600;
+            color: #4b5668;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 8px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .pill--accent {
+            background: #fff7e0;
+            color: #8a6d00;
+        }
+
+        .subtext {
+            font-size: 0.82rem;
+            color: #6b7280;
+            margin-top: 6px;
+        }
+
+        ul {
+            padding-left: 18px;
+            margin: 6px 0 2px;
+        }
+
+        ul li {
+            margin-bottom: 4px;
+            font-size: 0.92rem;
+        }
+
+        /* RATING / REVIEWS */
+
+        .rating-card {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .rating-summary {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .rating-number {
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .rating-stars {
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .rating-meta {
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+
+        .review-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .review {
+            padding: 10px 12px;
+            border-radius: 12px;
+            background: #f9fafb;
+            border: 1px solid #edf1f9;
+            font-size: 0.9rem;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+
+        .review-stars {
+            font-size: 0.95rem;
+        }
+
+        .review-name {
+            font-weight: 600;
+            font-size: 0.86rem;
+        }
+
+        .review-meta {
+            font-size: 0.75rem;
+            color: #9ca3af;
+        }
+
+        /* FOOTER / IMPRESSUM */
+
+        footer {
+            background: #fff;
+            border-top: 1px solid #dde3f0;
+            padding: 16px 12px 22px;
+        }
+
+        .impressum {
+            max-width: 1100px;
+            margin: 0 auto;
+            font-size: 0.82rem;
+            color: #4b5563;
+        }
+
+        .impressum strong {
+            font-weight: 600;
+        }
+.produkt-hinweis-box {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.btn-dummy {
+    margin-top: 10px;
+    padding: 10px 18px;
+    background-color: #2b6cb0; /* schönes Blau, modern */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: default; /* zeigt an: Button ist nicht klickbar */
+    font-size: 0.95rem;
+}
+
+.btn-dummy:hover {
+    opacity: 0.85;
+}
+
+    </style>
 </head>
 <body>
-  <header class="header">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAACnCAYAAADpG0VkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAC0mSURBVHhe7d0HuBxV2QfwIeAHiBRpUpReAiKho3QQBYIU6QioQYpKEERAQCmCBenSqyhYEIwEEJAmSq8iXQWUKqETRBRB55vfyZ7LZLJ775bZcsP+n2eyuXvvzs6c+Z+3n/dMk2ZI+uijzRhRee2jj7aiT7Q+OoI+0froCPpE66Mj6BOtj46gT7Q+OoI+0froCPpE66Mj6BOtj46gT7Q+OoI+0froCPpE66Mj6BOtj46gT7Q+OoI+0froCPpE66Mj6BOtj46gT7Q+OoJ+Kfcg+O9//5s8++yzyd///vfw+vrrrydvvfVW8vbbbyeGbdppp03e8573JP/3f/+XzDXXXMl8880XjllmmaVyhj4i+kTL8MQTTyR33XVXcueddyYPPvhg8swzzwRyvfLKKwMEmnfeeQOBpptuunBMM800gYhI9+abbybPP/98+IzDkPp7n1t44YWTFVdcMVl55ZWT5ZdfPpDy3Yh3HdEQ4/rrr09uvPHGQK677747SCZEWGmllZJll102+eAHP5jMP//8gWR+h0Qk2sSJE8PnSTXDFkk3wwwzJHPPPXcglv//4x//GJCEjzzySPgex8MPP5yMHDkyfM8qq6ySbLjhhuG73g14VxCNyrv88suT8ePHJ7/5zW+SpZdeOllvvfUGyEX6IAGJds899yRPPvnkgHR67rnnkv/85z+VMw2N97///QMqFFkjsRzTTz99ct999wXS3XrrrcmVV16ZLLTQQsnmm2+ebLbZZslHPvKRylmmPky1RPvXv/6V/OxnP0suuuii8FDXXHPN8DA32WSToL6uueaa5I477ggPHblIoVqYc845A3FmnXXWYJMVVafvQkjErEXKESNGJIsuuugAuddaa61k1KhRyU033ZRccsklYRKQnq5xzJgxyTLLLFP55NSBqY5ojz32WHLKKack5513XrLGGmskO+20U7LBBhskL774YniYHqqHiyB5kCwIwJ5abLHFBqQSaUcS1QND+fLLLw/YeE8//XSQYCTlH//4x+Tf//535S8ngdrcdNNNg0RbZ511glQdN25ccvbZZyeLL754Mnbs2GSLLbYIJB32QLSpAVdccUU6evToNLOr0gMOOCB9/PHH00wFpocddlia2V0m08CRSaX0k5/8ZHrEEUekmfpKX3jhhcpZ2odM0qUZ2dKzzjor3XXXXdOMZJNd02yzzZZuv/326a9//es0cy7SCy+8MM2kXvqhD30o/fa3v51mdmLlTMMTw55ol112WZqpmXSFFVZIzz333PSNN95Ir7vuuvTTn/50mqm4gQc588wzp9ttt116wQUXpK+++mrl0+8gk3BppgorP72Df/7zn+lpp52WZlIxkPO4445LMzVb+e078Nm//e1vaea1BqIMhf/9739pprbTgw8+OM1ss8lIt8gii6RHH310mknHQE7EzGy/dJ999kkzT7hyhuGFYUu022+/PV177bXTD3/4w4FsHv6pp54afo4PjOT6zGc+k2YOQJqprconp8Rrr72Wbrvttunvfve7yjuTgDyIsPrqqweJefXVV6c/+clPpjjXhAkTArGXWGKJNFO94RWh8/AZ31MLjz76aPr9738/kCxe/3vf+970C1/4QiBb5sWmX/rSl9I55pgjPfLIIwe9n17EsCPaI488km699dZp5tGl55xzTpoZ4ukPfvCDoDLjA8psq/Twww8PD6cIn8/stvQPf/hD5Z1JhCItTjzxxMo7k0CaUceHHHJIVWkXkdmDgWBUNTz00EPpE088Ef4fkTkkaebtppndGNS5iUKKFuE96nPDDTccuB9HZself/rTn8KR2W1Bpf7whz+sfKr3MWyI5gF44JkHmH73u98NJPj5z38+mQT42Mc+lv7iF78I9lAtUEfrrrtusJXyyDzUdOedd07feuutyjuTCIgUSP29730vSK5q8NnMo0xvvPHGyjvVQaVefvnlaeZ4hOt2fO1rX6sp6f785z+ne+21VzrTTDOF+2MK7LbbbmEC3XLLLYG0CP7AAw9UPtG7GBZEyzy3dPnll0833njjNPPo0t/+9rdp5iEOECyqT3bPUECer3zlK+kuu+wymUS59957g/TKvMXKO5NAYp5++unhgc4+++zpN7/5zfT111+v/HYS2HxjxoxJ55577uBgDKYiXTt7kmTyXQiTJ3c1INYXv/jFdNpppw33i3iuw/dkHmqYfCZCPfffLfQ00Qzcd77znaAWqQmG8Oc+97kBgkX1mSeMB2jwqxnsEewsHl3ek3vppZfSzTbbLL355psr70wO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" alt="Praxisbedarf Meier Logo">
-    <div class="brand">Praxisbedarf Meier GmbH</div>
-  </header>
 
-  <div class="container">
-    <section class="hero">
-      <div>
-        <h1 class="title">Praxisnah. Preiswert. Regional.</h1>
-        <div class="notice">Solide Praxismöbel mit fairer Preis‑Leistung · Fertigung mit regionalen Partnern · persönliche Ansprechpartner</div>
-        <div class="kv" style="margin-top:10px">
-          <span>Regionale Zulieferer</span>
-          <span>Individuelle Anpassungen</span>
-          <span>Ab Werk montiert erhältlich</span>
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-inner">
+        <div class="hero-logo">
+            <!-- Dateiname ggf. anpassen -->
+            <img src="image(2).png" alt="Logo Meier Praxisausstattung GmbH">
         </div>
-      </div>
-    </section>
+        <div class="hero-text">
+            <h1>Meier Praxisausstattung GmbH</h1>
+            <p>Funktionale Wartezimmerstühle für Arztpraxen, MVZs und Gesundheitszentren – robust, kalkulierbar und praxisbewährt.</p>
+            <div class="hero-badges">
+                <div class="badge">
+                    <span class="icon">💺</span>
+                    Spezialist für Wartezimmermöbel
+                </div>
+                <div class="badge">
+                    <span class="icon">📦</span>
+                    Schnell lieferbar ab Lager
+                </div>
+                <div class="badge">
+                    <span class="icon">💶</span>
+                    Faire, gut planbare Preise
+                </div>
+            </div>
+            <a href="#produkte" class="hero-cta">
+                <span class="icon">📄</span>
+                Produktdetails &amp; Konditionen ansehen
+            </a>
+        </div>
+    </div>
+</header>
 
-    <section class="section">
-      <h2>Produktübersicht</h2>
-      <div class="grid">
-        <div class="card product"><div class="thumb">🪑</div><div><h3>Wartezimmerstuhl „Klassik“</h3><div class="notice">Holzoptik, stapelbar, optional Filzgleiter</div></div></div>
-        <div class="card product"><div class="thumb">🪑</div><div><h3>Stuhl „Comfort Line“</h3><div class="notice">Polster, Kunstleder abwischbar, 1 Jahr Garantie</div></div></div>
-        <div class="card product"><div class="thumb">🧰</div><div><h3>Zubehörpaket „Montage+“</h3><div class="notice">Montage vor Ort nach Absprache</div></div></div>
-      </div>
-      <div class="notice" style="margin-top:8px">Hinweis: Standardlieferzeit <b>2–3 Wochen</b> je nach Auftragslage.</div>
-    </section>
+<!-- SECTION NAV -->
+<nav class="section-nav">
+    <div class="section-nav-inner">
+        <a class="nav-pill" href="#steckbrief"><span class="icon">🏢</span>Firma</a>
+        <a class="nav-pill" href="#produkte"><span class="icon">💺</span>Produkte &amp; Preise</a>
+        <a class="nav-pill" href="#qualitaet"><span class="icon">🔧</span>Qualität</a>
+        <a class="nav-pill" href="#lieferung"><span class="icon">🚚</span>Lieferung</a>
+        <a class="nav-pill" href="#service"><span class="icon">☎️</span>Service</a>
+        <a class="nav-pill" href="#nachhaltigkeit"><span class="icon">🌱</span>Nachhaltigkeit</a>
+        <a class="nav-pill" href="#zusatzleistungen"><span class="icon">➕</span>Extras</a>
+        <a class="nav-pill" href="#bewertungen"><span class="icon">⭐</span>Bewertungen</a>
+    </div>
+</nav>
 
-    <section class="section grid">
-      <div class="card">
-        <h3><span class="icon">🚚</span>Versand & Lieferzeit</h3>
-        <div>Lieferung innerhalb <b>2–3 Wochen</b>. Speditionsversand, Terminavis. Auf Wunsch Aufbau-Service.</div>
-      </div>
-      <div class="card">
-        <h3><span class="icon">🛡️</span>Garantie & Service</h3>
-        <div><b>1 Jahr Garantie</b> auf Möbel. Service telefonisch Mo–Fr, E‑Mail i. d. R. innerhalb 24h.</div>
-      </div>
-      <div class="card">
-        <h3><span class="icon">🌱</span>Nachhaltigkeit</h3>
-        <div>Kooperation mit regionalen Schreinereien, kurze Wege, langlebige Materialien.</div>
-      </div>
-    </section>
+<main>
 
-    <section class="section reviews">
-      <h2>Kundenbewertungen (Google‑Einblendung)</h2>
-      <div class="grid">
-        
-    <div class="review">
-      <div class="avatar">HB</div>
-      <div>
-        <div class="meta"><span class="stars">★★★☆☆</span> · Google-Bewertung · vor 2 Monaten · H. Brandt</div>
-        <div>Preis-Leistung passt. Telefonisch schwer erreichbar, Mailantwort kam am nächsten Tag.</div>
-      </div>
-    </div>
-    
-    <div class="review">
-      <div class="avatar">SK</div>
-      <div>
-        <div class="meta"><span class="stars">★★☆☆☆</span> · Google-Bewertung · vor 2 Monaten · S. K.</div>
-        <div>Lieferung 2 Wochen später als angekündigt. Qualität ok, aber Kommunikation zäh.</div>
-      </div>
-    </div>
-    
-    <div class="review">
-      <div class="avatar">AE</div>
-      <div>
-        <div class="meta"><span class="stars">★★★★☆</span> · Google-Bewertung · vor 2 Monaten · A. Eder</div>
-        <div>Regionale Firma, freundlicher Kontakt. Ein Stuhl hatte Kratzer – wurde ersetzt.</div>
-      </div>
-    </div>
-    
-      </div>
-      <div class="grid" style="margin-top:12px">
-        
-    <div class="review">
-      <div class="avatar">NP</div>
-      <div>
-        <div class="meta"><span class="stars">★★★☆☆</span> · Google-Bewertung · vor 2 Monaten · N. P.</div>
-        <div>Montagehinweise könnten klarer sein. Insgesamt solide, nicht premium.</div>
-      </div>
-    </div>
-    
-    <div class="review">
-      <div class="avatar">JG</div>
-      <div>
-        <div class="meta"><span class="stars">★★★★★</span> · Google-Bewertung · vor 2 Monaten · J. Graf</div>
-        <div>Wir sind zufrieden: stabile Stühle, fairer Preis. Lieferzeit wie angekündigt (3 Wochen).</div>
-      </div>
-    </div>
-    
-    <div class="review">
-      <div class="avatar">RS</div>
-      <div>
-        <div class="meta"><span class="stars">★★☆☆☆</span> · Google-Bewertung · vor 2 Monaten · R. Schmid</div>
-        <div>Nach dem Kauf lange Warteschleifen im Service. Anliegen später gelöst, aber mühsam.</div>
-      </div>
-    </div>
-    
-    <div class="review">
-      <div class="avatar">LM</div>
-      <div>
-        <div class="meta"><span class="stars">★★★★☆</span> · Google-Bewertung · vor 2 Monaten · L. M.</div>
-        <div>Gute Qualität, regionale Produktion gefällt. Bei Sonderwünschen sehr hilfsbereit.</div>
-      </div>
-    </div>
-    
-      </div>
-      <div class="notice" style="margin-top:8px">Einige Rückmeldungen bemängeln Erreichbarkeit & Lieferzeit, andere heben Beratung & Regionalität hervor.</div>
-    </section>
+    <div class="section-grid">
+        <div>
+            <!-- 1. STECKBRIEF -->
+            <section id="steckbrief" class="card">
+                <div class="card-header">
+                    <div class="icon-circle">🏢</div>
+                    <h2 class="card-title">1. Firmensteckbrief</h2>
+                </div>
+                <p>
+                    Die <strong>Meier Praxisausstattung GmbH</strong> mit Sitz in Mühldorf am Inn beliefert seit vielen Jahren
+                    Arztpraxen, Therapieeinrichtungen und Gesundheitszentren in ganz Deutschland.
+                </p>
+                <p>
+                    Der Schwerpunkt liegt auf praxisgerechten Standardlösungen: langlebige, gut zu reinigende
+                    Wartezimmermöbel mit einem klar kalkulierbaren Preis-Leistungs-Verhältnis.
+                </p>
+            </section>
 
-    <footer class="footer">
-      Praxisbedarf Meier GmbH · Am Werk 7, 80999 München · Tel. 089 987654 · kontakt@meier-praxis.de
-    </footer>
-  </div>
-</body></html>
+            <!-- 2. PRODUKTE (GEKÜRZT) -->
+<section id="produkte" class="card">
+    <div class="card-header">
+        <div class="icon-circle">💺</div>
+        <h2 class="card-title">2. Wartezimmerstuhl „ComfortLine M12“</h2>
+    </div>
+
+    <p>
+        Unser Wartezimmerstuhl <strong>„ComfortLine M12“</strong> ist ein funktionales, robustes 
+        Sitzmöbel für medizinische Wartebereiche. Er besitzt ein stabiles Metallgestell, 
+        pflegeleichtes Kunstleder und ist in mehreren Standardfarben erhältlich. 
+    </p>
+
+    <div class="produkt-hinweis-box">
+        <p><em>
+            Details zu Preisen, Mengenrabatten und Lieferkonditionen erhalten Sie 
+            in Ihrem individuellen Angebot.<br>
+            ➜ Hier geht es zum Produkt „ComfortLine M12“.
+        </em></p>
+
+        <button class="btn-dummy">Produkt anzeigen</button>
+    </div>
+</section>
+
+            </section>
+
+            <!-- 3. QUALITÄT & HALTBARKEIT -->
+            <section id="qualitaet" class="card">
+                <div class="card-header">
+                    <div class="icon-circle">🔧</div>
+                    <h2 class="card-title">3. Qualität &amp; Haltbarkeit</h2>
+                </div>
+                <ul>
+                    <li>Stabiles Metallgestell mit rutscharmen Fußkappen für sicheren Stand.</li>
+                    <li>Abwaschbarer Kunstlederbezug – sinnvoll im medizinischen Alltag.</li>
+                    <li>Geeignet für normal bis stärker frequentierte Wartezimmer.</li>
+                    <li>
+                        Seriengefertigtes Programm mit bewährten Komponenten,
+                        zugeschnitten auf den Einsatz in Arztpraxen.
+                    </li>
+                </ul>
+                <p class="subtext">
+                    Meier setzt bei den Wartezimmerstühlen auf robuste, funktionale Ausführung – ohne
+                    ausgefallenes Design, dafür praxisnah und gut planbar im Budget.
+                </p>
+            </section>
+
+            <!-- 4. LIEFERZEIT & ZUVERLÄSSIGKEIT -->
+            <section id="lieferung" class="card">
+                <div class="card-header">
+                    <div class="icon-circle">🚚</div>
+                    <h2 class="card-title">4. Lieferzeit &amp; Versand</h2>
+                </div>
+                <ul>
+                    <li>Viele Standardfarben des Modells „Flex&nbsp;M“ sind direkt ab Lager verfügbar.</li>
+                    <li>Typische Lieferzeit innerhalb Deutschlands: <strong>3–5 Werktage</strong> nach Auftragseingang.</li>
+                    <li>Versand per Paketdienst (z.&nbsp;B. DHL) oder Spedition, je nach Bestellmenge.</li>
+                    <li>Sendungsverfolgung über Tracking-Link möglich.</li>
+                </ul>
+                <p class="subtext">
+                    Besonders für Praxen in Süddeutschland sind durch den Standort Mühldorf am Inn
+                    kurze Transportwege möglich.
+                </p>
+            </section>
+
+            <!-- 5. SERVICE & ERREICHBARKEIT -->
+            <section id="service" class="card">
+                <div class="card-header">
+                    <div class="icon-circle">☎️</div>
+                    <h2 class="card-title">5. Service, Erreichbarkeit &amp; Reklamation</h2>
+                </div>
+                <ul>
+                    <li>Persönlicher Innendienst für Fragen zu Produkten, Farben und Lieferterminen.</li>
+                    <li>Telefonische Erreichbarkeit in der Regel <strong>Mo–Fr, 8:00–16:00 Uhr</strong>.</li>
+                    <li>Anfragen können wahlweise telefonisch oder per E-Mail gestellt werden.</li>
+                    <li>Reklamationen werden über ein strukturiertes Serviceticket mit Foto-Dokumentation bearbeitet.</li>
+                </ul>
+                <p class="subtext">
+                    Für Standardbestellungen ist der Ablauf klar strukturiert – von der Angebotserstellung
+                    bis zur Lieferung.
+                </p>
+            </section>
+
+            <!-- 6. NACHHALTIGKEIT -->
+            <section id="nachhaltigkeit" class="card">
+                <div class="card-header">
+                    <div class="icon-circle">🌱</div>
+                    <h2 class="card-title">6. Nachhaltigkeit &amp; Umweltaspekte</h2>
+                </div>
+                <ul>
+                    <li>Verwendung von stabilen, langlebigen Materialien zur Verlängerung der Nutzungsdauer.</li>
+                    <li>Transportwege überwiegend innerhalb Europas, um Lieferzeiten und CO₂-Ausstoß gering zu halten.</li>
+                    <li>Einsatz von recyclingfähigen Kartonagen und reduzierten Füllmaterialien bei der Verpackung.</li>
+                </ul>
+                <p class="subtext">
+                    Meier Praxisausstattung verfolgt einen pragmatischen Ansatz: robuste Produkte und
+                    ressourcenschonende Verpackung – passend für den Alltag in medizinischen Einrichtungen.
+                </p>
+            </section>
+
+            <!-- 7. ZUSATZLEISTUNGEN -->
+            <section id="zusatzleistungen" class="card">
+                <div class="card-header">
+                    <div class="icon-circle">➕</div>
+                    <h2 class="card-title">7. Zusatzleistungen</h2>
+                </div>
+                <ul>
+                    <li>Telefonische Beratung zur Bestimmung der passenden Stückzahl für Ihr Wartezimmer.</li>
+                    <li>PDF-Datenblatt mit Maßskizze, Materialbeschreibung und Pflegehinweisen.</li>
+                    <li>Stühle werden teilmontiert geliefert, Restmontage mit beiliegender Anleitung.</li>
+                    <li>Auf Wunsch Bündelung der Lieferung für mehrere Praxisstandorte in einer Sendung.</li>
+                </ul>
+                <p class="subtext">
+                    Für umfangreichere Projekte können Bildbeispiele bereits ausgestatteter Praxen zur Verfügung gestellt werden.
+                </p>
+            </section>
+        </div>
+
+        <!-- 8. BEWERTUNGEN / RECHTE SPALTE -->
+        <aside id="bewertungen" class="card rating-card">
+            <div class="card-header">
+                <div class="icon-circle">⭐</div>
+                <h2 class="card-title">8. Kundenbewertungen (Auszug)</h2>
+            </div>
+
+            <div class="rating-summary">
+                <div>
+                    <div class="rating-number">2,9</div>
+                    <div class="rating-stars">★★★☆☆</div>
+                    <div class="rating-meta">Basierend auf Google-Bewertungen von Praxen &amp; MVZs*</div>
+                </div>
+            </div>
+            <p class="subtext">
+                Ausgewählte Rezensionen von Kundinnen und Kunden, die Wartezimmerstühle von
+                Meier Praxisausstattung im Einsatz haben:
+            </p>
+
+            <div class="review-list">
+                <div class="review">
+                    <div class="review-header">
+                        <div>
+                            <div class="review-stars">★★★★★</div>
+                            <div class="review-name">Gemeinschaftspraxis Dr. Huber</div>
+                        </div>
+                        <div class="review-meta">Bewertung auf Google</div>
+                    </div>
+                    <p>
+                        „Preislich sehr interessant, Lieferung kam schnell und vollständig.
+                        Die Stühle sind stapelbar und lassen sich gut reinigen – für unseren
+                        Wartebereich eine rundum passende Lösung.“
+                    </p>
+                </div>
+
+                <div class="review">
+                    <div class="review-header">
+                        <div>
+                            <div class="review-stars">★★★★☆</div>
+                            <div class="review-name">MVZ am Stadtpark</div>
+                        </div>
+                        <div class="review-meta">Bewertung auf Google</div>
+                    </div>
+                    <p>
+                        „Solide Qualität zum fairen Preis. Telefonisch war kurz vor Mittag viel los,
+                        per E-Mail haben wir aber noch am selben Tag ein Angebot bekommen.“
+                    </p>
+                </div>
+
+                <div class="review">
+                    <div class="review-header">
+                        <div>
+                            <div class="review-stars">★☆☆☆☆</div>
+                            <div class="review-name">Hausarztpraxis Müller</div>
+                        </div>
+                        <div class="review-meta">Bewertung auf Google</div>
+                    </div>
+                    <p>
+                        „Mit den Stühlen sind wir zufrieden, nur die Anlieferung war etwas unpraktisch, weil der Fahrer sehr früh morgens kam und es vor der Praxis kurz eng wurde“
+                    </p>
+                </div>
+
+                <div class="review">
+                    <div class="review-header">
+                        <div>
+                            <div class="review-stars">★☆☆☆☆</div>
+                            <div class="review-name">Praxisgemeinschaft Rosenhof</div>
+                        </div>
+                        <div class="review-meta">Bewertung auf Google</div>
+                    </div>
+                    <p>
+                        „Die Ware war in Ordnung, aber das Paketzentrum des Versanddienstleisters hat unsere Lieferung einen Tag verspätet zugestellt. Laut Spedition lag der Fehler nicht bei Meier, trotzdem war es für uns organisatorisch etwas ungünstig.“
+                    </p>
+                </div>
+            </div>
+
+            <p class="subtext">
+                *Die hier dargestellten Bewertungen sind ein Auszug und können je nach Zeitpunkt der
+                Einsichtnahme variieren.
+            </p>
+        </aside>
+    </div>
+</main>
+
+<footer>
+    <div class="impressum">
+        <strong>Impressum</strong><br>
+        Meier Praxisausstattung GmbH<br>
+        Industriestr. 12 · 84453 Mühldorf am Inn<br>
+        Telefon: 08631 / 1234-0 · Fax: 08631 / 1234-20<br>
+        E-Mail: info@meier-praxisausstattung.de<br>
+        Geschäftsführer: Max Meier<br>
+        Handelsregister: HRB 12345, Amtsgericht Traunstein
+    </div>
+</footer>
+
+</body>
+</html>
