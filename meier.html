@@ -39,18 +39,21 @@
             align-items: center;
             gap: 24px;
             flex-wrap: wrap;
+            justify-content: space-between;   /* neu: mehr Abstand zwischen Text und Logo */
+            flex-direction: row-reverse;      /* neu: Logo optisch nach rechts */
         }
 
         .hero-logo {
             flex: 0 0 auto;
-            background: rgba(255,255,255,0.08);
-            border-radius: 50%;
-            padding: 12px;
+            padding: 10px 18px;               /* neu: rechteckiger Rahmen statt Kreis */
+            background: rgba(255,255,255,0.12);
+            border-radius: 14px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.18);
         }
 
         .hero-logo img {
             display: block;
-            height: 80px;
+            height: 90px;                     /* neu: etwas größer */
             width: auto;
         }
 
@@ -174,11 +177,11 @@
                 grid-template-columns: minmax(0, 1fr);
             }
             .hero-inner {
-                flex-direction: column;
+                flex-direction: column;       /* mobil wieder normale Reihenfolge */
                 align-items: flex-start;
             }
             .hero-logo img {
-                height: 70px;
+                height: 70px;                /* mobil etwas kleiner */
             }
         }
 
@@ -349,28 +352,29 @@
         .impressum strong {
             font-weight: 600;
         }
-.produkt-hinweis-box {
-    margin-top: 15px;
-    padding: 15px;
-    background-color: #fafafa;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-}
 
-.btn-dummy {
-    margin-top: 10px;
-    padding: 10px 18px;
-    background-color: #2b6cb0; /* schönes Blau, modern */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: default; /* zeigt an: Button ist nicht klickbar */
-    font-size: 0.95rem;
-}
+        .produkt-hinweis-box {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
 
-.btn-dummy:hover {
-    opacity: 0.85;
-}
+        .btn-dummy {
+            margin-top: 10px;
+            padding: 10px 18px;
+            background-color: #2b6cb0; /* schönes Blau, modern */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: default; /* zeigt an: Button ist nicht klickbar */
+            font-size: 0.95rem;
+        }
+
+        .btn-dummy:hover {
+            opacity: 0.85;
+        }
 
     </style>
 </head>
@@ -381,7 +385,7 @@
     <div class="hero-inner">
         <div class="hero-logo">
             <!-- Dateiname ggf. anpassen -->
-            <img src="image(2).png" alt="Logo Meier Praxisausstattung GmbH">
+            <img src="logo-meier-praxisausstattung.png" alt="Logo Meier Praxisausstattung GmbH">
         </div>
         <div class="hero-text">
             <h1>Meier Praxisausstattung GmbH</h1>
@@ -443,28 +447,28 @@
             </section>
 
             <!-- 2. PRODUKTE (GEKÜRZT) -->
-<section id="produkte" class="card">
-    <div class="card-header">
-        <div class="icon-circle">💺</div>
-        <h2 class="card-title">2. Wartezimmerstuhl „ComfortLine M12“</h2>
-    </div>
+            <section id="produkte" class="card">
+                <div class="card-header">
+                    <div class="icon-circle">💺</div>
+                    <h2 class="card-title">2. Wartezimmerstuhl „ComfortLine M12“</h2>
+                </div>
 
-    <p>
-        Unser Wartezimmerstuhl <strong>„ComfortLine M12“</strong> ist ein funktionales, robustes 
-        Sitzmöbel für medizinische Wartebereiche. Er besitzt ein stabiles Metallgestell, 
-        pflegeleichtes Kunstleder und ist in mehreren Standardfarben erhältlich. 
-    </p>
+                <p>
+                    Unser Wartezimmerstuhl <strong>„ComfortLine M12“</strong> ist ein funktionales, robustes 
+                    Sitzmöbel für medizinische Wartebereiche. Er besitzt ein stabiles Metallgestell, 
+                    pflegeleichtes Kunstleder und ist in mehreren Standardfarben erhältlich. 
+                </p>
 
-    <div class="produkt-hinweis-box">
-        <p><em>
-            Details zu Preisen, Mengenrabatten und Lieferkonditionen erhalten Sie 
-            in Ihrem individuellen Angebot.<br>
-            ➜ Hier geht es zum Produkt „ComfortLine M12“.
-        </em></p>
+                <div class="produkt-hinweis-box">
+                    <p><em>
+                        Details zu Preisen, Mengenrabatten und Lieferkonditionen erhalten Sie 
+                        in Ihrem individuellen Angebot.<br>
+                        ➜ Hier geht es zum Produkt „ComfortLine M12“.
+                    </em></p>
 
-        <button class="btn-dummy">Produkt anzeigen</button>
-    </div>
-</section>
+                    <button class="btn-dummy">Produkt anzeigen</button>
+                </div>
+            </section>
 
             </section>
 
